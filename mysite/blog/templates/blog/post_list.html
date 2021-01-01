@@ -3,7 +3,17 @@
         <title>Lägenhetsvärdering</title>
     </head>
     <body>
-        <p>Vill du få din lägenhet värderad?</p>
-        <p>Mer information kommer inom kort</p>
+        <div>
+    		<h1><a href="/">Victors hemsida</a></h1>
+		</div>
+
+		{% for post in posts %}
+		    <div>
+		        <p>published: {{ post.published_date }}</p>
+		        <h2><a href="">{{ post.title }}</a></h2>
+		        <p>{{ post.text|linebreaksbr }}</p>
+		    </div>
+		{% endfor %}
     </body>
+
 </html>
