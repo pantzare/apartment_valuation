@@ -1,12 +1,17 @@
 {% extends 'blog/base.html' %}
 {% block content %}
+<!--
+	<h2><a href="">{{ my_apartment_size }}</a></h2>
+	<h2><a href="">{{ my_apartment_value }}</a></h2>
+	-->
 	{% for post in posts %}
 	    <div class="post">
 	        <div class="date">
 	            <p>published: {{ post.published_date }}</p>
 	        </div>
-	        <h2><a href="">{{ post.title }}</a></h2>
-	        <p>{{ post.text|linebreaksbr }}</p>
+	        <h2><a href="">{{ post.rooms }}</a></h2>
+	        <p>{{ post.size|linebreaksbr }}</p>
 	    </div>
 	{% endfor %}
+
 {% endblock %}

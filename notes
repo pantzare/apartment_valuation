@@ -1,3 +1,11 @@
 1. skapa ny modell.py som gör något
 2. länka den i urls
 3. visa den i views
+
+BACKLOG
++ Form på startsidan som man kan skriva in antal rum och storlek i.
++ Ta datan från formen och visa den/förstå vart den hamnar
++ Ta datan och stoppa in den i min värderingsmodell (för Råsunda alltid)
+	+ Visa värdering
+	- Visa scatterplot
+- Gör det möjligt att ändra område
