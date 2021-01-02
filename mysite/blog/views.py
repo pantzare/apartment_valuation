@@ -34,7 +34,8 @@ def post_new(request):
 	return render(request, 'blog/post_edit.html', {'form': form})
 
 def valuation(request):
-	url='https://www.hemnet.se/salda/bostader?location_ids%5B%5D=473499&item_types%5B%5D=bostadsratt&rooms_max=1&sold_age=3m'
+	my_apartment_rooms=Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')[0].rooms
+	url='https://www.hemnet.se/salda/bostader?location_ids%5B%5D=473499&item_types%5B%5D=bostadsratt&rooms_max='+my_apartment_rooms+'&sold_age=3m'
 	#url = 'https://www.hemnet.se/salda/bostader?location_ids%5B%5D=473498&item_types%5B%5D=bostadsratt&rooms_min=2&rooms_max=2&sold_age=3m'
 	#imports data from 1 bedroom apartments in Råsunda sold in the last 3 months
 	response = requests.get(url)
@@ -80,5 +81,5 @@ def valuation(request):
 	return render(request, 'blog/valuation.html', {'my_apartment_value': my_apartment_value})
 
 def valuation2(request):
-	value=float(Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')[0].size)*68000
+	value=Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')[0].rooms
 	return render(request, 'blog/valuation.html', {'my_apartment_value': value})
