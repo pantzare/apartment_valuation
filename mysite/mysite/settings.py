@@ -25,7 +25,7 @@ SECRET_KEY = 'w*gvt$80(!+lb9#wj26(9-%f9ve1c7)^^6a^x113jyoe_si$@s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['virreviking.pythonanywhere.com']
 
 
 # Application definition
